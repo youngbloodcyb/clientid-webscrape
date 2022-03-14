@@ -6,11 +6,11 @@ import pandas as pd
 
 # set driver as chrome and nav to Ampry admin portal
 driver = webdriver.Chrome()
-driver.get('https://admin-live.ampry.com/')
+driver.get('https://{SITE}')
 
 # create login variables
-email = 'cameron@ampry.com'
-password = 'Let$getthisBREAD'
+email = '{LOGIN EMAIL}'
+password = '{PASSWORD}'
 
 # sign in
 username_field = driver.find_element(By.XPATH, '//*[@id="mainContainer"]/app-log-in/div/div/div[2]/div[2]/input')
@@ -177,4 +177,4 @@ dict = {
 
 df = pd.DataFrame(dict)
 
-df.to_csv('/Users/innovationexchange/Desktop/ampry_client_id_2.csv', sep=',', header=True)
+df.to_csv('{FILEPATH}.csv', sep=',', header=True)
